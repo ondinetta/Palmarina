@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>PALMARINA — Coming Soon</title>
+    <meta
+      name="description"
+      content="PALMARINA is a future coastal hideaway. A minimal, editorial coming soon page with location coordinates."
+    />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Grain overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Full background image -->
+    <div class="fullscreen-bg" aria-hidden="true">
+      <img
+        src="./Images/Palmarina%20Background.png"
+        alt=""
+        class="animate-subtle-zoom"
+        loading="eager"
+      />
+    </div>
+
+    <main class="fullscreen-content">
+      <!-- Right-side centered content -->
+      <section
+        class="content-container"
+        aria-label="Palmarina coming soon"
+      >
+        <h1 class="hero-title animate-reveal-title">PALMARINA</h1>
+
+        <p class="hero-subtitle animate-fade-in-up delay-500">
+          COMING SOON<span class="trademark" aria-hidden="true">™</span>
+          <span class="sr-only">trademark</span>
+        </p>
+
+        <button
+          class="coordinates animate-fade-in delay-1000"
+          type="button"
+          data-coordinates="2° 51.3302' S, 40° 41.7616' W"
+          aria-label="Copy coordinates 2 degrees 51.3302 minutes south, 40 degrees 41.7616 minutes west"
+          title="Click to copy coordinates"
+        >
+          2° 51.3302' S, 40° 41.7616' W
+        </button>
+
+        <p class="copy-feedback" aria-live="polite"></p>
+      </section>
+
+      <div class="corner-detail">
+        <span>CEARÁ, BRASIL</span>
+      </div>
+    </main>
+
+    <script src="./script.js" defer></script>
+
+    <!--
+      Analytics (optional, owner only)
+      To enable Plausible, replace example.com with your domain and remove this comment block.
+
+      <script
+        defer
+        data-domain="example.com"
+        src="https://plausible.io/js/script.js"
+      ></script>
+    -->
+  </body>
+  </html>
+
+

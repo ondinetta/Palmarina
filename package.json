@@ -1,0 +1,11 @@
+{
+  "name": "palmarina",
+  "version": "1.0.0",
+  "description": "PALMARINA editorial coming soon page.",
+  "private": true,
+  "scripts": {
+    "serve": "npx --yes serve ."
+  }
+}
+
+
