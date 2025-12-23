@@ -1,29 +1,45 @@
-// Click-to-copy GPS coordinates
-function setupCoordinateCopy() {
+// Open map modal
+function setupMapModal() {
   var coordEl = document.querySelector(".coordinates");
-  if (!coordEl) return;
+  var modal = document.getElementById("mapModal");
+  var closeBtn = document.getElementById("closeMapModal");
+  var overlay = document.querySelector(".map-modal-overlay");
+  
+  if (!coordEl || !modal) return;
 
-  var originalText = coordEl.textContent.trim();
-
+  // Open modal
   coordEl.addEventListener("click", function () {
-    var text =
-      coordEl.getAttribute("data-coordinates") || coordEl.textContent.trim();
+    modal.classList.add("is-visible");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
 
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-      navigator.clipboard.writeText(text).catch(function () {
-        // ignore clipboard errors, still show UI feedback
-      });
+  // Close modal function
+  function closeModal() {
+    modal.classList.remove("is-visible");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Close on overlay click
+  if (overlay) {
+    overlay.addEventListener("click", closeModal);
+  }
+
+  // Close on ESC key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("is-visible")) {
+      closeModal();
     }
-
-    coordEl.textContent = "COPIED!";
-    window.clearTimeout(setupCoordinateCopy._timeoutId);
-    setupCoordinateCopy._timeoutId = window.setTimeout(function () {
-      coordEl.textContent = originalText;
-    }, 1600);
   });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  setupCoordinateCopy();
+  setupMapModal();
 });
 
